@@ -156,12 +156,36 @@ section{
 
 section .card{
    float: left;
+   /* display: block; */
+   /* display: inline-block; */
    margin-left: 50px;
    margin-top: 50px;
 }
 
 section .card div, section .card p{
    color: #333333;
+}
+
+.c1, .c2, .c3{
+   z-index: 1;
+}
+
+.c4, .c5, .c6{
+   position: relative;
+   z-index: -1;
+}
+
+aside{
+   /* z-index: 2; */
+   /* position: absolute; */
+}
+
+.collapse_meu{
+   /* float: left; */
+   /* clear: both; */
+   /* z-index: 3; */
+   /* clear: both; */
+   /* position: relative; */
 }
 
 #margem_baixo{

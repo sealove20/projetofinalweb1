@@ -155,10 +155,10 @@ section{
 }
 
 section .card{
-   float: left;
+   /* float: left; */
    /* display: block; */
    /* display: inline-block; */
-   margin-left: 50px;
+   /* margin-left: 50px; */
    margin-top: 50px;
 }
 
@@ -166,30 +166,41 @@ section .card div, section .card p{
    color: #333333;
 }
 
-.c1, .c2, .c3{
-   z-index: 1;
+section aside a{
+   margin-top: 5px;
 }
 
-.c4, .c5, .c6{
-   position: relative;
-   z-index: -1;
+.esquerdinha{
+   padding-left: 25px;
+   padding-right: 25px;
 }
 
-aside{
-   /* z-index: 2; */
-   /* position: absolute; */
-}
-
-.collapse_meu{
-   /* float: left; */
-   /* clear: both; */
-   /* z-index: 3; */
-   /* clear: both; */
-   /* position: relative; */
+.esquerdinha a{
+   text-decoration: none;
 }
 
 #margem_baixo{
    margin-bottom: 50px;
+}
+
+.votacao_c1{
+   width: 70px;
+   margin: auto;
+   font-weight: bold;
+   background-color: #333333;
+   color: #cfcfcf !important;
+}
+
+.votacao_c1 a{
+   font-weight: bold;
+   color: #cfcfcf !important;
+   text-decoration: none;
+}
+
+.votacao_c1 a:hover{
+   font-weight: bold;
+   color: #ffa200 !important;
+   text-decoration: none;
 }
 
 /* footer */

@@ -127,10 +127,6 @@ nav li{
    background-color: #333333;
 }
 
-hr {
-   background: white;
-}
-
 #margem_esquerda{
    margin-left: 20px;
 }
@@ -160,4 +156,8 @@ section{
 footer{
    background-color: #333333;
    height: 50px;
+}
+
+#preto {
+   color: #000;
 }

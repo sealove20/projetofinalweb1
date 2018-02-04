@@ -149,13 +149,26 @@ nav li a:hover{
 /* section */
 section{
    background-color: #333333;
-   height: 600px;
+   /* height: 600px; */
+   width: 800px;
+   float: left;
+}
+
+.card{
+   float: left;
+   margin-left: 50px;
+   margin-top: 50px;
+}
+
+.card div, .card p{
+   color: red;
 }
 
 /* footer */
 footer{
    background-color: #333333;
    height: 50px;
+   clear: both;
 }
 
 #preto {

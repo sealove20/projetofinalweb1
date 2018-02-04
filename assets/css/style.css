@@ -149,47 +149,8 @@ nav li a:hover{
 /* section */
 section{
    background-color: #333333;
-   /* height: 600px; */
-   width: 800px;
-   float: left;
-}
-
-section .card{
-   float: left;
-   /* display: block; */
-   /* display: inline-block; */
-   margin-left: 50px;
-   margin-top: 50px;
-}
-
-section .card div, section .card p{
-   color: #333333;
-}
-
-.c1, .c2, .c3{
-   z-index: 1;
-}
-
-.c4, .c5, .c6{
-   position: relative;
-   z-index: -1;
-}
-
-aside{
-   /* z-index: 2; */
-   /* position: absolute; */
-}
-
-.collapse_meu{
-   /* float: left; */
-   /* clear: both; */
-   /* z-index: 3; */
-   /* clear: both; */
-   /* position: relative; */
-}
-
-#margem_baixo{
-   margin-bottom: 50px;
+   height: 600px;
+   width: 100%;
 }
 
 /* footer */
@@ -201,4 +162,22 @@ footer{
 
 #preto {
    color: #000;
+}
+
+iframe {
+   margin: 0 auto;
+   display: block;
+   width:420px;
+   height:315px;
+}
+
+section > h1 {
+   text-align: center;
+   padding-bottom: 50px;
+}
+
+footer > p {
+   text-align: center;
+   border-top: 1px solid white;
+   vertical-align: super;
 }

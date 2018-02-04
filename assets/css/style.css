@@ -154,14 +154,18 @@ section{
    float: left;
 }
 
-.card{
+section .card{
    float: left;
    margin-left: 50px;
    margin-top: 50px;
 }
 
-.card div, .card p{
-   color: red;
+section .card div, section .card p{
+   color: #333333;
+}
+
+#margem_baixo{
+   margin-bottom: 50px;
 }
 
 /* footer */

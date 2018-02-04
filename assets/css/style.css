@@ -168,9 +168,15 @@ iframe {
    display: block;
    width:420px;
    height:315px;
-   border: 1px solid yellow;
 }
 
 section > h1 {
    text-align: center;
+   padding-bottom: 50px;
+}
+
+footer > p {
+   text-align: center;
+   border-top: 1px solid white;
+   vertical-align: super;
 }

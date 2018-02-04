@@ -184,10 +184,10 @@ section aside a{
 }
 
 .votacao_c1{
-   width: 70px;
+   width: 90px;
    margin: auto;
    font-weight: bold;
-   background-color: #333333;
+   /* background-color: #333333; */
    color: #cfcfcf !important;
 }
 

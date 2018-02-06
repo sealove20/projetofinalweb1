@@ -236,3 +236,15 @@ footer  p {
    border-top: 1px solid white;
    padding-top: 40px
 }
+
+#listaDeDesejos {
+   width: 250px;
+   height: 220px;
+   background-color: gray;
+   float: right;
+   margin-right: 100px;
+}
+
+#listaDeDesejos p {
+   text-align: center;
+}

@@ -211,7 +211,7 @@ section aside a{
 /* footer */
 footer{
    background-color: #333333;
-   height: 50px;
+   height: 100px;
    clear: both;
 }
 
@@ -231,8 +231,8 @@ section > h1 {
    padding-bottom: 50px;
 }
 
-footer > p {
+footer  p {
    text-align: center;
    border-top: 1px solid white;
-   vertical-align: super;
+   padding-top: 40px
 }

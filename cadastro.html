@@ -3,6 +3,7 @@
    <head>
       <meta charset="utf-8">
       <title>CalanCursos</title>
+      <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
       <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -46,38 +47,42 @@
                </div>
                <hr>
                <fieldset>
-
-               <form>
-               <div class="form-row">
-                  <div class="form-group col-sm-6">
-                     <label for="campoNome">Seu nome</label>
-                     <input type="text" class="form-control" id="campoNome" placeholder="Nome">
-                  </div>
-                  <div class="form-group col-sm-6">
-                     <label for="campoSobrenome">Seu sobrenome</label>
-                     <input type="text" class="form-control" id="campoSobrenome" placeholder="Sobrenome">
-                  </div>
-                  <div class="form-group col-sm-12">
-                     <label for="campoEmail">Seu email</label>
-                     <input type="email" class="form-control" id="campoEmail" placeholder="Email">
-                  </div>
-                  <div class="form-group col-sm-12">
-                     <label for="campoSenha">Sua senha</label>
-                     <input type="password" class="form-control" id="campoSenha" placeholder="Senha">
-                  </div>
-                  <div class="form-group col-sm-12">
-                     <label for="campoIdade">Sua idade</label>
-                     <input type="date" class="form-control" id="campoIdade" placeholder="Idade">
-                  </div>
-               </div>
-            </form>
-         </fieldset>
-            <button class="btn btn-primary" type="submit">Enviar</button>
+                  <form>
+                     <div class="form-row">
+                        <div class="form-group col-sm-6">
+                           <label for="campoNome">Seu nome</label>
+                           <input type="text" class="form-control cadastro" id="campoNome" placeholder="Nome">
+                        </div>
+                        <div class="form-group col-sm-6">
+                           <label for="campoSobrenome">Seu sobrenome</label>
+                           <input type="text" class="form-control cadastro" id="campoSobrenome" placeholder="Sobrenome">
+                        </div>
+                        <div class="form-group col-sm-12">
+                           <label for="campoEmail">Seu e-mail</label>
+                           <input type="email" name="email" class="form-control cadastro" id="campoEmail" placeholder="E-mail">
+                           <!-- adicionei um name="email" aqui pra poder pegar o preenchimento automatico do meu navegador, mas afinal o FOR do LABEL é pro ID ou NAME do INPUT? -->
+                        </div>
+                        <div class="form-group col-sm-12">
+                           <label for="campoSenha">Sua senha</label>
+                           <input type="password" class="form-control cadastro" id="campoSenha" placeholder="Senha">
+                        </div>
+                        <div class="form-group col-sm-12">
+                           <label for="campoIdade">Data de Nascimento</label>
+                           <input type="date" class="form-control cadastro" id="campoIdade" placeholder="Idade">
+                        </div>
+                     </div>
+                     <button class="btn btn-primary enviar" type="submit">Enviar</button>
+                  </form>
+                  <!-- <button class="btn btn-primary enviar" type="submit">Enviar</button> -->
+                  <!-- o botão tava fora do FORM tem problema? dentro funciona o ENTER direto -->
+               </fieldset>
             </div>
          </section>
 
          <footer>
             <p>Matheusão and Kaykão corp. 2018/2020.</p>
+            <a href="./alterar.html">Perfil</a>
+            <!-- adicionei um link aqui só pra acessar a pagina de alteração PERFIL do usuario pra n perder os dados do sessionStorage, mas esse "LINK" vai estar disponivel quando o usuario efetuar o login e trocar o LOGIN|ASSINAR por PERFIL|SAIR que nosso amigo matheus irá implementar :)-->
          </footer>
 
       </main>

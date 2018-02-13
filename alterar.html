@@ -25,7 +25,7 @@
                </ul>
                <div class="linha"></div>
                <ul>
-                  <li><a href="#">Assinar</a></li>
+                  <li><a href="./cadastro.html">Assinar</a></li>
                </ul>
             </div>
          </header>
@@ -46,26 +46,33 @@
                </div>
                <hr>
                <fieldset>
+                  Nome: <span id="nomeCompleto">Nome</span>
+                  <br>
+                  Data de Nascimento: <span id="dataNascimento">Data</span>
 
-               <form>
                   <div id="listaDeDesejos">
                      <p>Lista de desejos</p>
                      <hr>
                   </div>
-               <div class="form-row">
-                  <div class="form-group col-sm-10">
-                     <label for="campoEmail">Email atual</label>
-                     <input type="email" class="form-control" id="campoEmail" placeholder="Email">
-                  </div>
-                  <div class="form-group col-sm-10">
-                     <label for="campoSenha">Senha atual</label>
-                     <input type="password" class="form-control" id="campoSenha" placeholder="Senha">
-                  </div>
-               </div>
-            </form>
-         </fieldset>
 
-            <button class="btn btn-primary" type="submit">Enviar</button>
+                  <form>
+                     <div class="form-row">
+                        <div class="form-group col-sm-10">
+                           <br>
+                           <label for="campoEmail">E-mail</label>
+                           <input type="email" name="email" class="form-control nvdados" id="campoEmail" placeholder="E-mail">
+                           <!-- adicionei um name="email" aqui pra poder pegar o preenchimento automatico do meu navegador, mas afinal o FOR do LABEL é pro ID ou NAME do INPUT? -->
+                        </div>
+                        <div class="form-group col-sm-10">
+                           <label for="campoSenha">Senha</label>
+                           <input type="password" class="form-control nvdados" id="campoSenha" placeholder="Senha">
+                        </div>
+                     </div>
+                     <button class="btn btn-primary alterar" type="submit">Alterar Dados</button>
+                  </form>
+               </fieldset>
+               <!-- <button class="btn btn-primary alterar" type="submit">Alterar Dados</button> -->
+               <!-- o botão tava fora do FORM tem problema? dentro funciona o ENTER direto -->
             </div>
          </section>
 

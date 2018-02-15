@@ -205,4 +205,57 @@ $(document).ready(function(){
    });
 // ------------------ fim do alterar ------------------
 
+
+
+});
+
+// função que pega os dados dos campos do modal e guarda no sessionStorage
+$("#btnEnviar").click(function(){
+   //verifica se o campo do email esta vazio
+   if ($("#email").val() === '') {
+      alert("Campo email está vazio!");
+   // verifica se o email é o mesmo cadastrado
+   } else if ($("#email").val() !== sessionStorage.email){
+      alert("Email digitado está errado, verifique se está tudo digitado corretamente.");
+   }
+   //verifica se o campo do senha esta vazio
+   if ($("#senha").val() === '') {
+      alert("Campo senha está vazio!");
+   // verifica se o senha é o mesmo cadastrado
+   } else if ($("#senha").val() !== sessionStorage.senha){
+      alert("Senha digitado está errado, verifique se está tudo digitado corretamente.");
+   }
+   // efetua login caso esteja tudo certo
+   if ($("#email").val() === sessionStorage.email && $("#senha").val() === sessionStorage.senha) {
+      alert("LOGOU");
+      sessionStorage.chave = true;
+      location.reload();
+   }
+});
+
+if(sessionStorage.chave === "true"){
+   $(".modulo_login").hide();
+   $("#modulo_logado").show();
+} else {
+   $(".modulo_login").show();
+   $("#modulo_logado").hide();
+}
+
+$(".dropbtn").click(function() {
+   document.getElementById("myDropdown").classList.toggle("show");
+});
+// var btnDropdown = document.getElementsByClassName("dropbtn");
+// btnDropdown[0].addEventListener("click", function() {
+//    document.getElementById("myDropdown").classList.toggle("show");
+// });
+// function myFunction() {
+//     document.getElementById("myDropdown").classList.toggle("show");
+// }
+
+$(".dropbtn").html("bem vindo, " + sessionStorage.nome);
+
+$("#sair").click(function() {
+   sessionStorage.chave = false;
+   location.reload();
+   console.log("click");
 });

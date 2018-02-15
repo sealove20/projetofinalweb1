@@ -29,6 +29,13 @@
                   <li><a href="#">Assinar</a></li>
                </ul>
             </div>
+            <div id="modulo_logado">
+               <button class="dropbtn">DropDown</button>
+               <div  id="myDropdown" class="dropdown-content">
+                  <a href="./alterar.html">Perfil</a>
+                  <a id="sair" href="#">Sair</a>
+               </div>
+            </div>
          </header>
 
          <nav>
@@ -100,18 +107,18 @@
                <div class="form-group">
                   <div id="preto" class="modal-body">
                      <label id="preto" for="campoEmail" >Seu e-mail</label>
-                    <input type="text" class="form-control" id="campoEmail" placeholder="e-mail">
+                    <input type="text" class="form-control" id="email" placeholder="e-mail">
                   </div>
                </div>
                   <div class="form-group">
                      <div id="preto" class="modal-body">
                         <label id="preto" for="campoSenha" >Sua senha</label>
-                       <input type="text" class="form-control form-control" id="campoSenha" placeholder="senha">
+                       <input type="password" class="form-control form-control" id="senha" placeholder="senha">
                      </div>
                </div>
             </form>
             <div class="modal-footer">
-              <button type="button" class="btn btn-primary">Entrar</button>
+              <button type="button" class="btn btn-primary" id="btnEnviar">Entrar</button>
             </div>
           </div>
         </div>

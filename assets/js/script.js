@@ -232,7 +232,8 @@ $("#btnEnviar").click(function(){
       location.reload();
    }
 });
-
+// verifica se é uma sessão logada ou não
+// da pra colocar os bang do card aqui
 if(sessionStorage.chave === "true"){
    $(".modulo_login").hide();
    $("#modulo_logado").show();
@@ -241,19 +242,16 @@ if(sessionStorage.chave === "true"){
    $("#modulo_logado").hide();
 }
 
+// função pra mostrar e ocultar os links do botão dropdown
 $(".dropbtn").click(function() {
    document.getElementById("myDropdown").classList.toggle("show");
 });
-// var btnDropdown = document.getElementsByClassName("dropbtn");
-// btnDropdown[0].addEventListener("click", function() {
-//    document.getElementById("myDropdown").classList.toggle("show");
-// });
-// function myFunction() {
-//     document.getElementById("myDropdown").classList.toggle("show");
-// }
 
+// funcionalidade pra personalizar o nome que é mostrado quando o cara loga
 $(".dropbtn").html("bem vindo, " + sessionStorage.nome);
 
+// função que altera o valor da chave
+// tem 1 bug, quando você desloga na tela de alterar, ele continua naquela tela. Tem que ver um jeito de quando ele sair naquela tela, fazer ir pro index.
 $("#sair").click(function() {
    sessionStorage.chave = false;
    location.reload();

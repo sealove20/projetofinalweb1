@@ -189,7 +189,7 @@ section .card div, section .card p{
    color: #333333;
 }
 
-section aside a{
+section div a{
    margin-top: 5px;
 }
 
@@ -202,9 +202,8 @@ section aside a{
    text-decoration: none;
 }
 
-#margem_baixo{/*um id para o ultimo card apenas para dar uma margem do footer*/
+.margem_baixo{/*um id para o ultimo card apenas para dar uma margem do footer*/
    margin-bottom: 50px;
->>>>>>> card
 }
 
 .votacao_c1{
@@ -217,13 +216,13 @@ section aside a{
 
 .votacao_c1 a{
    font-weight: bold;
-   color: #cfcfcf !important;
+   color: #cfcfcf;
    text-decoration: none;
 }
 
 .votacao_c1 a:hover{
    font-weight: bold;
-   color: #ffa200 !important;
+   color: #FFE000 !important;
    text-decoration: none;
 }
 
@@ -307,7 +306,6 @@ footer  p {
     text-decoration: none;
     display: block;
 }
-
 
 .dropdown a:hover {background-color: #ddd}
 

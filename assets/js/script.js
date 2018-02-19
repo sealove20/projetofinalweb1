@@ -131,31 +131,7 @@ $(document).ready(function(){
             todosnovos +=1;
          }
       });
-
-      // isso aqui tudo só altera os dados do sessionStorage somente se os dois campos forem preenchidos e talvez isso não seja ideal POR FAVOR NÃO APAGAR ESSE TRECHO DE CÓDIGO
-      // if (todosnovos == 2) {
-      //    if (camponovo[1].value == sessionStorage.senha && camponovo[0].value == sessionStorage.email) {
-      //       //AMBOS igual ao do banco informe outra
-      //       alert("Informe um E-MAIL e uma SENHA diferente!");
-      //    }else if (camponovo[1].value == sessionStorage.senha) {
-      //       //senha igual ao do banco informe outra
-      //       alert("Informe uma SENHA diferente!");
-      //    } else if (camponovo[0].value == sessionStorage.email) {
-      //       //email igual ao do banco informe outro
-      //       alert("Informe um E-MAIL diferente!");
-      //    }else {
-      //       alert("Dados atualizados com sucesso!");
-      //    }
-      // }else if (todosnovos == -2) {
-      //    alert("Por favor preencha os campos que deseja alterar!");
-      // }else if (todosnovos == 0) {
-      //    if (camponovo[0].value == "") {
-      //       alert("Por favor preencha o campo de E-MAIL corretamente!");
-      //    }else if (camponovo[1].value == "") {
-      //       alert("Por favor preencha o campo de SENHA corretamente!");
-      //    }
-      // }
-
+      // todosnovos2.js estava aqui
       // isso aqui altera os dados do sessionStorage dos dois campos mas não verifica se são iguais ou não aos já armazenados
       if (todosnovos == 2) {
          alert("Dados atualizados com sucesso!");
@@ -203,12 +179,10 @@ $(document).ready(function(){
          }
       });
    });
+});
 // ------------------ fim do alterar ------------------
 
-
-
-});
-
+// ------------------ inicio do login ------------------
 // função que pega os dados dos campos do modal e guarda no sessionStorage
 $("#btnEnviar").click(function(){
    //verifica se o campo do email esta vazio
@@ -229,7 +203,9 @@ $("#btnEnviar").click(function(){
    if ($("#email").val() === sessionStorage.email && $("#senha").val() === sessionStorage.senha) {
       alert("LOGOU");
       sessionStorage.chave = true;
-      location.reload();
+      // location.reload();
+      window.location.href="./index.html";
+      // leva pra pagina inicial depois de logar
    }
 });
 // verifica se é uma sessão logada ou não
@@ -237,9 +213,15 @@ $("#btnEnviar").click(function(){
 if(sessionStorage.chave === "true"){
    $(".modulo_login").hide();
    $("#modulo_logado").show();
+
+   $("#curso_deslogado").hide();
+   $("#curso_logado").show();
 } else {
    $(".modulo_login").show();
    $("#modulo_logado").hide();
+
+   $("#curso_deslogado").show();
+   $("#curso_logado").hide();
 }
 
 // função pra mostrar e ocultar os links do botão dropdown
@@ -248,7 +230,7 @@ $(".dropbtn").click(function() {
 });
 
 // funcionalidade pra personalizar o nome que é mostrado quando o cara loga
-$(".dropbtn").html("bem vindo, " + sessionStorage.nome);
+$(".dropbtn").html("Bem vindo, " + sessionStorage.nome);
 
 // função que altera o valor da chave
 // tem 1 bug, quando você desloga na tela de alterar, ele continua naquela tela. Tem que ver um jeito de quando ele sair naquela tela, fazer ir pro index.
@@ -257,3 +239,40 @@ $("#sair").click(function() {
    location.reload();
    console.log("click");
 });
+// ------------------ fim do login ------------------
+
+// ------------------ inicio da votação ------------------
+$(document).ready(function(){
+
+   // var cr = {
+   //    "c1":{ele:"", pontos:"",},
+   //    "c2":{ele:"", pontos:"",},
+   //    "c3":{ele:"", pontos:"",},
+   //    "c4":{ele:"", pontos:"",},
+   //    "c5":{ele:"", pontos:"",},
+   //    "c6":{ele:"", pontos:"",}
+   // };
+   //
+   // var lista_cursos = ["c1","c2","c3","c4","c5","c6"];
+
+   var curs = $(".votacao_c1");// pega a DIV que contem as estrelinhas
+   curs.each(function(){// roda por todas elas
+
+      $(this).children().click(function(event) {// faz o click nos filhos delas, a tag A (ancora)
+         console.log($(this).attr('class'));// qual estrela foi clicada
+         console.log($(this).parent().attr('id'));// id do curso
+         console.log($(this).parent());// qual DIV de qual curso foi clicada
+         console.log($(this).parent().children());// lista de todas tag A dentro da DIV
+         mudacor($(this).parent().children(), $(this).attr('class'));// Chama a função que mudar a cor passando a lista de A e qual das 5 foram clicadas
+      });
+   });
+   function mudacor(ele,ate){
+      for (var i = 0; i < parseInt(ate); i++) {
+         ele[i].style.color="#FFE000";// pinta de amarelo
+      }
+      for (var j = parseInt(ate); j < 5; j++) {
+         ele[j].style.color="#cfcfcf";// pinta o resto de cinza
+      }
+   }
+});
+// ------------------ fim da votação ------------------

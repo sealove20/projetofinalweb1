@@ -11,6 +11,15 @@
 $(document).ready(function(){
 
 // ------------------ inicio do formulario ------------------
+   var cr = {
+      "c1":{pontos:"",},
+      "c2":{pontos:"",},
+      "c3":{pontos:"",},
+      "c4":{pontos:"",},
+      "c5":{pontos:"",},
+      "c6":{pontos:"",}
+   };
+
    var inputs = $(".cadastro");//pega todos os campos com a classe cadastro que esta nos inputs do formulario
    campos = "";//monta uma string com o nome dos campos que ainda faltam preencher para o cadastro
    todos = 0;//se ao clicar no botão ela valer 5 é pq todos os campos foram preenchidos o formulario esta pronto para o envio
@@ -37,8 +46,8 @@ $(document).ready(function(){
       inputs.each(function(){
          if (this.value=="") {
             console.log($(this).attr("id")+" vazio!");
-            campos = campos + $(this).attr("id").slice(5);
-            campos = campos + ", ";
+            campos = campos + $(this).attr("id").slice(5);//concatena o nome do campo vazio com a string campo
+            campos = campos + ", ";//adiciona um ", " depois da cada campo vazio concatenado
             todos-=1;
          } else {
             console.log($(this).attr("id") + " " + this.value);
@@ -47,16 +56,17 @@ $(document).ready(function(){
       });
       console.log(todos);
       console.log(campos);
-      campos = campos.slice(0, campos.length - 2);
-      campos = campos + "!";
+      campos = campos.slice(0, campos.length - 2);//remove o ultimo ", " da string final
+      campos = campos + "!";//adiciona uma "!" ao final da string
       if (campos == "!") {//se a string campo conter apenas "!" todos os campos foram preenchidos e o formulario pode ser enviado
          alert("Cadastro realizado com sucesso!");
-         sessionStorage.nome = inputs[0].value[0].toUpperCase()+inputs[0].value.slice(1,inputs[0].value.length);
-         sessionStorage.sobrenome = inputs[1].value[0].toUpperCase()+inputs[1].value.slice(1,inputs[1].value.length);
+         sessionStorage.nome = inputs[0].value[0].toUpperCase()+inputs[0].value.slice(1,inputs[0].value.length);//deixa a primeira letra maiuscula
+         sessionStorage.sobrenome = inputs[1].value[0].toUpperCase()+inputs[1].value.slice(1,inputs[1].value.length);//deixa a primeira letra maiuscula
          sessionStorage.email = inputs[2].value;
          sessionStorage.senha = inputs[3].value;
          sessionStorage.idade = inputs[4].value;
          sessionStorage.chave = false;
+         sessionStorage.votouser = JSON.stringify(cr);
       } else {
          alert("Por favor preencha corretamente os campos:\n" + campos);
       }
@@ -244,28 +254,27 @@ $("#sair").click(function() {
 // ------------------ inicio da votação ------------------
 $(document).ready(function(){
 
-   // var cr = {
-   //    "c1":{ele:"", pontos:"",},
-   //    "c2":{ele:"", pontos:"",},
-   //    "c3":{ele:"", pontos:"",},
-   //    "c4":{ele:"", pontos:"",},
-   //    "c5":{ele:"", pontos:"",},
-   //    "c6":{ele:"", pontos:"",}
-   // };
-   //
-   // var lista_cursos = ["c1","c2","c3","c4","c5","c6"];
+   var lista_cursos = ["c1","c2","c3","c4","c5","c6"];
 
    var curs = $(".votacao_c1");// pega a DIV que contem as estrelinhas
    curs.each(function(){// roda por todas elas
+      // cr = JSON.parse(sessionStorage.votouser);
+      recupera($(this).children(), $(this).attr('id'));//chama a função que recupera passando os filhos da estrela e o ID pra identificar qual o curso correspondente
+      // console.log($(this).children());
+      // console.log($(this).attr('id'));
+      // console.log(pegou["c1"].pontos);
+      // console.log(pegou[$(this).attr('id')].pontos);
 
       $(this).children().click(function(event) {// faz o click nos filhos delas, a tag A (ancora)
          console.log($(this).attr('class'));// qual estrela foi clicada
          console.log($(this).parent().attr('id'));// id do curso
          console.log($(this).parent());// qual DIV de qual curso foi clicada
          console.log($(this).parent().children());// lista de todas tag A dentro da DIV
+         grava_cr($(this).parent().attr('id'),$(this).attr('class'));//chama a função que insere no objeto CR, passando o ID do curso e a quantidade de estrela clicadas
          mudacor($(this).parent().children(), $(this).attr('class'));// Chama a função que mudar a cor passando a lista de A e qual das 5 foram clicadas
       });
    });
+
    function mudacor(ele,ate){
       for (var i = 0; i < parseInt(ate); i++) {
          ele[i].style.color="#FFE000";// pinta de amarelo
@@ -274,5 +283,20 @@ $(document).ready(function(){
          ele[j].style.color="#cfcfcf";// pinta o resto de cinza
       }
    }
+
+   function grava_cr(id,val){
+      cr[id].pontos=val;
+      sessionStorage.votouser = JSON.stringify(cr);
+      console.log(cr);
+   }
+
+   function recupera(ele,id){
+      cr = JSON.parse(sessionStorage.votouser);
+      for (var i = 0; i < parseInt(cr[id].pontos); i++) {
+         ele[i].style.color="#FFE000";// pinta de amarelo
+      }
+   }
+
 });
+
 // ------------------ fim da votação ------------------

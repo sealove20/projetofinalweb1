@@ -1,23 +1,18 @@
 @import url('https://fonts.googleapis.com/css?family=Noto+Serif');/*importa uma fonte*/
 
 *{
-   /* margin: 0;
-   padding: 0; */
    color: #ffffff;
 }
 
 /* main */
 main{
    font-family: 'Noto Serif', serif;
-   /* background-color: gray; */
    width: 800px;
-   /* height: 600px; */
    margin: auto;
 }
 
 /* header */
 header{
-   /* background-color: red; */
    width: 800px;
    height: 100px;
    border-left: 2px solid #333333;
@@ -39,10 +34,8 @@ header .logo img{
 }
 
 header .nome{
-   /* background-color: gray; */
    width: 300px;
    margin-left: 123px;
-   /* margin-left: 125px; */
    text-align: center;
    margin-top: 20px;
 }
@@ -65,12 +58,9 @@ header .nome a:hover{
 }
 
 header .modulo_login{
-   /* background-color: #333333; */
    width: 150px;
    height: 100px;
    margin-left: 123px;
-   /* margin-left: 246px; */
-   /* margin-left: 125px; */
    text-align: center;
 }
 
@@ -127,10 +117,6 @@ nav li{
    background-color: #333333;
 }
 
-#margem_esquerda{
-   margin-left: 20px;
-}
-
 nav li a{
    display: block;
    color: #ffffff;
@@ -149,9 +135,49 @@ nav li a:hover{
 /* section */
 section{
    background-color: #333333;
-   /* height: 600px; */
    width: 800px;
    float: left;
+}
+
+section iframe, section button{
+   margin-bottom: 50px;
+}
+
+section .card{
+   margin-top: 50px;
+}
+
+section .card div, section .card p{
+   color: #333333;
+}
+
+section div a{
+   margin-top: 5px;
+}
+
+/* footer */
+footer{
+   background-color: #333333;
+   height: 100px;
+   clear: both;
+}
+
+iframe {
+   margin: 0 auto;
+   display: block;
+   width:420px;
+   height:315px;
+}
+
+section > h1 {/*seleciona todos os h1 dentro da section*/
+   text-align: center;
+   padding-bottom: 50px;
+}
+
+footer  p {
+   text-align: center;
+   border-top: 1px solid white;
+   padding-top: 40px
 }
 
 .cadastro::-webkit-input-placeholder, .nvdados::-webkit-input-placeholder{/*mudar a cor da fonte do placeholder para branco*/
@@ -173,26 +199,6 @@ section{
    color: white;
 }
 
-section iframe, section button{
-   margin-bottom: 50px;
-}
-
-section .card{
-   /* float: left; */
-   /* display: block; */
-   /* display: inline-block; */
-   /* margin-left: 50px; */
-   margin-top: 50px;
-}
-
-section .card div, section .card p{
-   color: #333333;
-}
-
-section div a{
-   margin-top: 5px;
-}
-
 .esquerdinha{
    padding-left: 25px;
    padding-right: 25px;
@@ -210,7 +216,6 @@ section div a{
    width: 90px;
    margin: auto;
    font-weight: bold;
-   /* background-color: #333333; */
    color: #cfcfcf !important;
 }
 
@@ -224,53 +229,6 @@ section div a{
    font-weight: bold;
    color: #FFE000 !important;
    text-decoration: none;
-}
-
-/* footer */
-footer{
-   background-color: #333333;
-   height: 100px;
-   clear: both;
-}
-
-#preto {
-   color: #000;
-}
-
-iframe {
-   margin: 0 auto;
-   display: block;
-   width:420px;
-   height:315px;
-}
-
-section > h1 {/*seleciona todos os h1 dentro da section*/
-   text-align: center;
-   padding-bottom: 50px;
-}
-
-footer  p {
-   text-align: center;
-   border-top: 1px solid white;
-   padding-top: 40px
-}
-
-#listaDeDesejos {
-   width: 250px;
-   height: 220px;
-   background-color: gray;
-   float: right;
-   margin-right: 100px;
-}
-
-#listaDeDesejos p {
-   text-align: center;
-}
-
-#modulo_logado {
-   float: right;
-   margin-top: 20px;
-   margin-right: 20px;
 }
 
 /*
@@ -310,3 +268,28 @@ footer  p {
 .dropdown a:hover {background-color: #ddd}
 
 .show {display:block;}
+
+#preto {
+   color: #000;
+}
+
+#listaDeDesejos {
+   width: 250px;
+   height: 220px;
+   background-color: gray;
+   float: right;
+   margin-right: 100px;
+}
+
+#listaDeDesejos p {
+   text-align: center;
+}
+
+#modulo_logado {
+   float: right;
+   margin-top: 20px;
+   margin-right: 20px;
+}
+#margem_esquerda{
+   margin-left: 20px;
+}

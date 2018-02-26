@@ -296,7 +296,23 @@ $(document).ready(function(){
          ele[i].style.color="#FFE000";// pinta de amarelo
       }
    }
-
 });
 
 // ------------------ fim da votação ------------------
+var listCur = [];//lista com os nomes dos cursos que o usuario marcou como desejado
+$('.btn').click(function() {
+   var flag = true;
+   if(listCur.length === 0){ //compara se a lista esta vazia
+      listCur.push($(this).attr('data-t'));//se estiver vazia, adiciona o valor do atributo de data-t
+   } else {
+      for(var i = 0; i < listCur.length; i++){ //laço percorrendo toda a lista
+         if(listCur[i] === $(this).attr('data-t')) { //verifica se o valor contido na posição da lista é igual ao do armazenado em data-t
+            flag = false;
+         }
+      }
+      if(flag === true) { //Atribui o valor de data-t para a lista, caso a condição anterior for falsa
+         listCur.push($(this).attr('data-t'));
+      }
+   }
+   sessionStorage.desejo = listCur;
+});

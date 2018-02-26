@@ -1,7 +1,20 @@
 @import url('https://fonts.googleapis.com/css?family=Noto+Serif');/*importa uma fonte*/
 
 *{
-   color: #ffffff;
+   color: #165402;
+}
+
+body{
+   background-color: #8a9c71;
+}
+
+.barrinha_nav{
+   background-color: #1a6103;
+   width: 100%;
+   height: 50px;
+   position: absolute;
+   margin-top: 100px;
+   z-index: -1;
 }
 
 /* main */
@@ -15,8 +28,8 @@ main{
 header{
    width: 800px;
    height: 100px;
-   border-left: 2px solid #333333;
-   border-right: 2px solid #333333;
+   /* border-left: 2px solid #333333; */
+   /* border-right: 2px solid #333333; */
 }
 
 header > div{/*seleciona todas as divs dentro do header*/
@@ -24,7 +37,7 @@ header > div{/*seleciona todas as divs dentro do header*/
 }
 
 header .logo{
-   background-color: #ffffff;
+   /* background-color: #ffffff; */
    width: 100px;
    height: 100px;
 }
@@ -45,15 +58,15 @@ header .nome a{
    display: inline-block; /*tem que tranformar a tag A em inline-block ou block pra funcionar o transform*/
    font-size: 40px;
    font-weight: bold;
-   color: #333333;/*cor do texto*/
-   text-shadow: 2px 2px 5px #ffffff;/*sombra inicial no texto*/
+   color: #165402;/*cor do texto*/
+   text-shadow: 2px 2px 5px #1d7d00;/*sombra inicial no texto*/
    transform: scale(1,1);/*escala inicial no texto*/
    transition: color 0.8s, text-shadow 0.8s, transform 0.8s;/*tempo que cada propriedade leva para mudar quando acontecer o hover no texto*/
 }
 
 header .nome a:hover{
-   color: #ffffff;/*nova cor do texto*/
-   text-shadow: 2px 2px 5px #333333;/*nova sombra*/
+   color: #1d7d00;/*nova cor do texto*/
+   text-shadow: 2px 2px 5px #259901;/*nova sombra*/
    transform: scale(1.3,1.3);/*nova escala*/
 }
 
@@ -79,12 +92,12 @@ header .modulo_login ul li{
 header .modulo_login ul li a{
    /* display: block; */
    text-decoration: none;
-   color: #333333;
+   color: #ffffff;
    text-align: center;
 }
 
 header .modulo_login ul li a:hover{
-   color: #333333;
+   color: #165402;
 }
 
 header .modulo_login .linha{
@@ -97,7 +110,7 @@ header .modulo_login .linha{
 
 /* nav */
 nav{
-   background-color: #333333;
+   background-color: #1a6103;
    width: 800px;
    height: 50px;
    /* border-radius: 5px; */
@@ -114,7 +127,8 @@ nav ul{
 nav li{
    float: left;
    width: 80px;
-   background-color: #333333;
+   background-color: #1a6103;
+   border-radius: 10px;
 }
 
 nav li a{
@@ -126,7 +140,7 @@ nav li a{
 }
 
 nav li a:hover{
-   background-color: #262626;
+   background-color: #154c03;
    border-radius: 10px;
    color: #ffffff;
    text-decoration: none;
@@ -134,7 +148,7 @@ nav li a:hover{
 
 /* section */
 section{
-   background-color: #333333;
+   background-color: #8a9c71;
    width: 800px;
    float: left;
 }
@@ -147,6 +161,10 @@ section .card{
    margin-top: 50px;
 }
 
+section .card-body{
+   /* background-color: #b0c493; */
+};
+
 section .card div, section .card p{
    color: #333333;
 }
@@ -157,7 +175,7 @@ section div a{
 
 /* footer */
 footer{
-   background-color: #333333;
+   background-color: #8a9c71;
    height: 100px;
    clear: both;
 }
@@ -177,7 +195,7 @@ section > h1 {/*seleciona todos os h1 dentro da section*/
 footer  p {
    text-align: center;
    border-top: 1px solid white;
-   padding-top: 40px
+   padding-top: 40px;
 }
 
 .cadastro::-webkit-input-placeholder, .nvdados::-webkit-input-placeholder{/*mudar a cor da fonte do placeholder para branco*/

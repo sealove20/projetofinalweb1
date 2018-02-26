@@ -299,6 +299,8 @@ $(document).ready(function(){
 });
 
 // ------------------ fim da votação ------------------
+
+// ------------------lista de desejos - adicionar no sessionStorage-------------------
 var listCur = [];//lista com os nomes dos cursos que o usuario marcou como desejado
 $('.btn').click(function() {
    var flag = true;
@@ -316,3 +318,12 @@ $('.btn').click(function() {
    }
    sessionStorage.desejo = listCur;
 });
+// ------------------FIM lista de desejos - adicionar no sessionStorage-------------------
+
+
+// ------------------lista de desejos - pegar do sessionStorage-------------------
+var pegaCursos = sessionStorage.desejo;
+pegaCursos = pegaCursos.split(',');
+for(var i = 0; i < pegaCursos.length; i++){
+   $('#EstiloDesejos').append("<li><span><i class='fas fa-trash-alt'></i></span>" + pegaCursos[i] + "</li>");
+}

@@ -102,7 +102,6 @@ $(document).ready(function(){
 
    for(var i = 0; i < pegaCursos.length; i++){
       if (pegaCursos[i] === ''){
-         i++;
       } else {
          $('#EstiloDesejos').append("<li><span><i class='fas fa-trash-alt'></i></span>" + pegaCursos[i] + "</li>");
       }

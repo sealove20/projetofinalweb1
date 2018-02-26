@@ -329,5 +329,13 @@ for(var i = 0; i < pegaCursos.length; i++){
 }
 
 $('#EstiloDesejos').on("click", "span",function() {
-   $(this).parent().remove();
+   for(var i = 0; i < pegaCursos.length; i++){
+      if(pegaCursos[i] === $(this).parent().text()) {
+         $(this).parent().remove();
+         pegaCursos.splice(i, 1);
+         sessionStorage.desejo = pegaCursos;
+      }
+   }
+
+
 });

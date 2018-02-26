@@ -4,6 +4,11 @@
    color: #ffffff;
 }
 
+body {
+   background: url(https://images.unsplash.com/photo-1491186561459-68c36c4a54ae?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=e5fdf835a04cd4803e07455552229d7c&auto=format&fit=crop&w=1052&q=80);
+   background-size: cover;
+   background-position: center;
+}
 /* main */
 main{
    font-family: 'Noto Serif', serif;
@@ -17,6 +22,8 @@ header{
    height: 100px;
    border-left: 2px solid #333333;
    border-right: 2px solid #333333;
+   background-color: #ffffff;
+
 }
 
 header > div{/*seleciona todas as divs dentro do header*/

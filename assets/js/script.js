@@ -327,3 +327,7 @@ pegaCursos = pegaCursos.split(',');
 for(var i = 0; i < pegaCursos.length; i++){
    $('#EstiloDesejos').append("<li><span><i class='fas fa-trash-alt'></i></span>" + pegaCursos[i] + "</li>");
 }
+
+$('#EstiloDesejos').on("click", "span",function() {
+   $(this).parent().remove();
+});

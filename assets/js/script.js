@@ -67,6 +67,7 @@ $(document).ready(function(){
          sessionStorage.idade = inputs[4].value;
          sessionStorage.chave = false;
          sessionStorage.votouser = JSON.stringify(cr);
+         sessionStorage.desejo = '';
       } else {
          alert("Por favor preencha corretamente os campos:\n" + campos);
       }
@@ -302,6 +303,7 @@ $(document).ready(function(){
 
 // ------------------lista de desejos - adicionar no sessionStorage-------------------
 var listCur = [];//lista com os nomes dos cursos que o usuario marcou como desejado
+
 listCur = sessionStorage.desejo;
 listCur = listCur.split(',');
 $('.btn').click(function() {
@@ -339,6 +341,4 @@ $('#EstiloDesejos').on("click", "span",function() {
          sessionStorage.desejo = pegaCursos;
       }
    }
-
-
 });

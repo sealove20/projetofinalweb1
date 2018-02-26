@@ -67,7 +67,7 @@ $(document).ready(function(){
          sessionStorage.idade = inputs[4].value;
          sessionStorage.chave = false;
          sessionStorage.votouser = JSON.stringify(cr);
-         sessionStorage.desejo = '';
+         sessionStorage.desejo = [];
       } else {
          alert("Por favor preencha corretamente os campos:\n" + campos);
       }
@@ -303,12 +303,11 @@ $(document).ready(function(){
 
 // ------------------lista de desejos - adicionar no sessionStorage-------------------
 var listCur = [];//lista com os nomes dos cursos que o usuario marcou como desejado
-
 listCur = sessionStorage.desejo;
 listCur = listCur.split(',');
+
 $('.btn').click(function() {
    var flag = true;
-   var controle;
    if(listCur.length === 0){ //compara se a lista esta vazia
       listCur.push($(this).attr('data-t'));//se estiver vazia, adiciona o valor do atributo de data-t
    } else {
@@ -318,7 +317,7 @@ $('.btn').click(function() {
          }
       }
       if(flag === true) { //Atribui o valor de data-t para a lista, caso a condição anterior for falsa
-         listCur.push($(this).attr('data-t'));
+         listCur.push($(this).attr('data-t'));//adiciona o valor do data-t para a lista
       }
    }
    sessionStorage.desejo = listCur;
@@ -329,9 +328,15 @@ $('.btn').click(function() {
 // ------------------lista de desejos - pegar do sessionStorage-------------------
 var pegaCursos = sessionStorage.desejo;
 pegaCursos = pegaCursos.split(',');
+
 for(var i = 0; i < pegaCursos.length; i++){
-   $('#EstiloDesejos').append("<li><span><i class='fas fa-trash-alt'></i></span>" + pegaCursos[i] + "</li>");
+   if (pegaCursos[i] === ''){
+      i++;
+   } else {
+      $('#EstiloDesejos').append("<li><span><i class='fas fa-trash-alt'></i></span>" + pegaCursos[i] + "</li>");
+   }
 }
+
 
 $('#EstiloDesejos').on("click", "span",function() {
    for(var i = 0; i < pegaCursos.length; i++){

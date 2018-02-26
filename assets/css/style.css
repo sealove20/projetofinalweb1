@@ -265,9 +265,13 @@ footer  p {
     display: block;
 }
 
-.dropdown a:hover {background-color: #ddd}
+.dropdown a:hover {
+   background-color: #ddd
+}
 
-.show {display:block;}
+.show {
+   display:block;
+}
 
 #preto {
    color: #000;
@@ -319,6 +323,6 @@ footer  p {
   opacity: 1;
 }
 
-#EstiloDesejos li:nth-child(odd) {
+#EstiloDesejos li:nth-child(even) {
     background: #f7f7f7;
 }

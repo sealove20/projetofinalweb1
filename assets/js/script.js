@@ -302,8 +302,11 @@ $(document).ready(function(){
 
 // ------------------lista de desejos - adicionar no sessionStorage-------------------
 var listCur = [];//lista com os nomes dos cursos que o usuario marcou como desejado
+listCur = sessionStorage.desejo;
+listCur = listCur.split(',');
 $('.btn').click(function() {
    var flag = true;
+   var controle;
    if(listCur.length === 0){ //compara se a lista esta vazia
       listCur.push($(this).attr('data-t'));//se estiver vazia, adiciona o valor do atributo de data-t
    } else {

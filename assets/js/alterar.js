@@ -3,6 +3,8 @@ $(document).ready(function(){
       $(cara).css({
          "background-color":"red",//muda o background dos inputs para a vermelho se o mesmo estiver vazio
          "color":"white",//mudar a cor da fonte dos inputs pra branco
+         "borderColor":"blue",
+         "fontSize":17,
       });
    };
    // função verde para mudar a cor dos inputs
@@ -10,6 +12,8 @@ $(document).ready(function(){
       $(cara).css({
          "background-color":"green",//muda o background dos inputs para a cor vermelha se o mesmo estiver vazio
          "color":"white",//mudar a cor da fonte dos inputs pra branco
+         "borderColor":"blue",
+         "fontSize":15,
       });
    };
 // ------------------ inicio do alterar ------------------

@@ -5,12 +5,8 @@ $(document).ready(function(){
 
    var curs = $(".votacao_c1");// pega a DIV que contem as estrelinhas
    curs.each(function(){// roda por todas elas
-      // cr = JSON.parse(sessionStorage.votouser);
       recupera($(this).children(), $(this).attr('id'));//chama a função que recupera passando os filhos da estrela e o ID pra identificar qual o curso correspondente
-      // console.log($(this).children());
-      // console.log($(this).attr('id'));
-      // console.log(pegou["c1"].pontos);
-      // console.log(pegou[$(this).attr('id')].pontos);
+
 
       $(this).children().click(function(event) {// faz o click nos filhos delas, a tag A (ancora)
          console.log($(this).attr('class'));// qual estrela foi clicada

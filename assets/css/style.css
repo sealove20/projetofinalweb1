@@ -141,13 +141,9 @@ nav li a:hover{
 
 /* section */
 section{
-   background-color: #333333;
+   background: linear-gradient(#304ffe,#ffc107);
    width: 800px;
    float: left;
-}
-
-section iframe, section button{
-   margin-bottom: 50px;
 }
 
 section .card{
@@ -169,11 +165,17 @@ footer{
    clear: both;
 }
 
-iframe {
+i {
+   color: black;
+   padding-left: 10px;
+}
+
+video {
    margin: 0 auto;
    display: block;
    width:420px;
    height:315px;
+   padding-bottom: 50px;
 }
 
 section > h1 {/*seleciona todos os h1 dentro da section*/
@@ -321,6 +323,7 @@ footer  p {
    height: 40px;
    line-height: 40px;
    color: #666;
+   padding-left: 0;
 }
 
 #EstiloDesejos span {
@@ -337,4 +340,8 @@ footer  p {
 
 #EstiloDesejos li:nth-child(even) {
     background: #f7f7f7;
+}
+
+#EstiloDesejos a {
+   padding-left: 10px;
 }
